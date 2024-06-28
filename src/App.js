@@ -29,30 +29,31 @@ function App() {
   };
 
   return (
-    <Router basename="/stressmap">
+    // <Router basename="/stressmap">
+      <Router>
       <div className="App" id="root">
         {userRole === 'admin' && <AdminNavbar />}
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home showNavbar={false} showFooter={true} />} />
-            <Route path="/map" element={<Map3DComponent showNavbar={true} />} />
-            <Route path="/uploaddata" element={<UploadData showNavbar={true} />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/login" element={<Login showNavbar={true} setUserRole={setUserRole} />} />
-            <Route path="/sign-up" element={<SignUp showNavbar={true} />} />
-            <Route path="/reset-password" element={<ResetPassword showNavbar={true} />} />
-            <Route path="/download" element={<Download showModal={showModal} handleCloseModal={handleCloseModal} />} />
-            <Route path="/profile" element={<ProfileComponent showNavbar={true} />} />
-            <Route path="/viewmap" element={<AdminMap />} />
-            <Route path="/adminNavbar" element={<AdminNavbar />} />
-            <Route path="/viewuser" element={<ViewUser />} />
-            <Route path="/adduser" element={<AddUser />} />
-            <Route path="/recorddownload" element={<RecordDownload />} />
-            <Route path="/activation" element={<Activation />} />
-            <Route path="/historyupload" element={<HistoryUploadData />} />
-            <Route path="/uploadview" element={<UploadView />} />
-            <Route path="/register" element={<RegisterUser />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/stressmap" element={<Home showNavbar={false} showFooter={true} />} />
+            <Route path="/stressmap/map" element={<Map3DComponent showNavbar={true} />} />
+            <Route path="/stressmap/uploaddata" element={<UploadData showNavbar={true} />} />
+            <Route path="/stressmap/history" element={<History />} />
+            <Route path="/stressmap/login" element={<Login showNavbar={true} setUserRole={setUserRole} />} />
+            <Route path="/stressmap/sign-up" element={<SignUp showNavbar={true} />} />
+            <Route path="/stressmap/reset-password" element={<ResetPassword showNavbar={true} />} />
+            <Route path="/stressmap/download" element={<Download showModal={showModal} handleCloseModal={handleCloseModal} />} />
+            <Route path="/stressmap/profile" element={<ProfileComponent showNavbar={true} />} />
+            <Route path="/stressmap/viewmap" element={<AdminMap />} />
+            <Route path="/stressmap/adminNavbar" element={<AdminNavbar />} />
+            <Route path="/stressmap/viewuser" element={<ViewUser />} />
+            <Route path="/stressmap/adduser" element={<AddUser />} />
+            <Route path="/stressmap/recorddownload" element={<RecordDownload />} />
+            <Route path="/stressmap/activation" element={<Activation />} />
+            <Route path="/stressmap/historyupload" element={<HistoryUploadData />} />
+            <Route path="/stressmap/uploadview" element={<UploadView />} />
+            <Route path="/stressmap/register" element={<RegisterUser />} />
+            <Route path="/stressmap/dashboard" element={<Dashboard />} />
           </Routes>
         </div>
       </div>

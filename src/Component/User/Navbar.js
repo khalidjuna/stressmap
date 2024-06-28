@@ -11,7 +11,7 @@ const Navbar = () => {
   const handleItemClick = (path) => {
     if (path === selectedItem) {
       setSelectedItem(null); 
-      navigate("/map"); 
+      navigate("/stressmap/map"); 
     } else {
       setSelectedItem(path);
       navigate(path);
@@ -48,10 +48,10 @@ const Navbar = () => {
 };
 
 const menuItems = [
-  { path: "/", label: "Home", icon: "bi bi-house-door-fill" },
-  { path: "/profile", label: "User", icon: "bi bi-person-fill" },
+  { path: "/stressmap", label: "Home", icon: "bi bi-house-door-fill" },
+  { path: "/stressmap/profile", label: "User", icon: "bi bi-person-fill" },
   {
-    path: "/uploaddata",
+    path: "/stressmap/uploaddata",
     label: "Upload Data",
     icon: "bi bi-cloud-arrow-down-fill",
   },

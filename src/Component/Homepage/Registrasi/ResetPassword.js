@@ -17,7 +17,7 @@ const ResetPassword = () => {
 
     return (
         <div className="container">
-            <Link to="/" className="back-button">
+            <Link to="/stressmap" className="back-button">
                 <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
             <div className="header">

@@ -21,10 +21,10 @@ const headerStyles = {
     },
     title: {
         fontSize: '1.5rem',
-        fontWeight: 'bold',
+        fontWeight: 'bold 700',
         color: 'black',
         fontFamily: "Comic Neue, cursive",
-        fontWeight: '700',
+        // fontWeight: '700',
     },
     nav: {
         listStyle: 'none',
@@ -66,7 +66,7 @@ const Header = () => {
     };
 
     const handleLoginClick = () => {
-        navigate('/login'); // Mengarahkan navigasi ke rute '/login'
+        navigate('/stressmap/login'); // Mengarahkan navigasi ke rute '/login'
     };
 
     return (

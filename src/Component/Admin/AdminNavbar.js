@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleItemClick = (path) => {
     if (path === selectedItem) {
       setSelectedItem(null); 
-      navigate("/dashboard"); 
+      navigate("/stressmap/dashboard"); 
     } else {
       setSelectedItem(path);
       navigate(path);
@@ -45,14 +45,14 @@ const Navbar = () => {
 };
 
 const menuItems = [
-  { path: "/dashboard", label: "Dashboard", icon: "bi bi-house-door-fill" },
-  { path: "/activation", label: "Activation", icon: "bi bi-check-circle-fill" },
-  { path: "/viewuser", label: "View All Users", icon: "bi bi-person-lines-fill" },
-  { path: "/viewmap", label: "View Map", icon: "bi bi-geo-alt-fill" },
-  { path: "/recorddownload", label: "Record Download", icon: "bi bi-cloud-arrow-down-fill" }, 
-  { path: "/historyupload", label: "Upload History", icon: "bi bi-clock-fill" },
-  { path: "/uploadview", label: "View Upload", icon: "bi bi-cloud-fill" },
-  { path: "/register", label: "Register User", icon: "bi bi-person-plus-fill" },
+  { path: "/stressmap/dashboard", label: "Dashboard", icon: "bi bi-house-door-fill" },
+  { path: "/stressmap/activation", label: "Activation", icon: "bi bi-check-circle-fill" },
+  { path: "/stressmap/viewuser", label: "View All Users", icon: "bi bi-person-lines-fill" },
+  { path: "/stressmap/viewmap", label: "View Map", icon: "bi bi-geo-alt-fill" },
+  { path: "/stressmap/recorddownload", label: "Record Download", icon: "bi bi-cloud-arrow-down-fill" }, 
+  { path: "/stressmap/historyupload", label: "Upload History", icon: "bi bi-clock-fill" },
+  { path: "/stressmap/uploadview", label: "View Upload", icon: "bi bi-cloud-fill" },
+  { path: "/stressmap/register", label: "Register User", icon: "bi bi-person-plus-fill" },
 ];
 
 const zIndex = 1;

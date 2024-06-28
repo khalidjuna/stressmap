@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+// import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AddUser = () => {
@@ -15,15 +16,15 @@ const AddUser = () => {
     const navigate = useNavigate(); 
 
     const handleAddUser = () => {
-        const userData = {
-            fullName,
-            email,
-            position,
-            institution,
-            city,
-            country,
-            password
-        };
+        // const userData = {
+        //     fullName,
+        //     email,
+        //     position,
+        //     institution,
+        //     city,
+        //     country,
+        //     password
+        // };
         
         navigate("/success");
     };

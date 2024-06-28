@@ -109,11 +109,11 @@ const ProfileComponent = () => {
   const navigate = useNavigate();
 
   const handleEditProfile = () => {
-    navigate('/edit-profile');
+    navigate('/stressmap/edit-profile');
   };
 
   const handleLogout = () => {
-    navigate('/login');
+    navigate('/stressmap/login');
   };
 
 

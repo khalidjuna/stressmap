@@ -17,7 +17,7 @@ const Login = ({ setUserRole }) => {
 
     const handleForgotPasswordClick = () => {
         setForgotPasswordClicked(true);
-        navigate("/reset-password");
+        navigate("/stressmap/reset-password");
     };
 
     const handleLogin = (e) => {
@@ -26,10 +26,10 @@ const Login = ({ setUserRole }) => {
         // Example:
         if (email === 'admin@example.com' && password === 'admin') {
             setUserRole('admin');
-            navigate('/adminmap');
+            navigate("/stressmap/adminmap");
         } else {
             setUserRole('user');
-            navigate('/map');
+            navigate("/stressmap/map");
         }
         setIsLoggedIn(true);
     };
@@ -41,7 +41,7 @@ const Login = ({ setUserRole }) => {
                     Logout
                 </button>
             )}
-            <Link to="/" className="back-button">
+            <Link to="/stressmap" className="back-button">
                 <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
             <div className="header">

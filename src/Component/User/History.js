@@ -24,7 +24,7 @@ const History = () => {
     // Simulasi pengiriman data ke server
     setTimeout(() => {
       console.log("Data re-interpolated successfully");
-      navigate('/map');
+      navigate('/stressmap/map');
     }, 1000);
   };
 

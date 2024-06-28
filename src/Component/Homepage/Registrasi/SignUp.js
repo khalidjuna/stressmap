@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const SignUp = () => {
     return (
         <div className="container">
-            <Link to="/" className="back-button">
+            <Link to="/stressmap" className="back-button">
                 <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
             <div className="header">
@@ -39,7 +39,7 @@ const SignUp = () => {
             </div>
             <div className="submit-container">
                 <button className="btn btn-primary submit">Sign Up</button>
-                <Link to="/login" className="btn btn-secondary submit gray">Login</Link>
+                <Link to="/stressmap/login" className="btn btn-secondary submit gray">Login</Link>
             </div>
             <style>
                 {`

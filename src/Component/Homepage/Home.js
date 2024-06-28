@@ -9,7 +9,7 @@ const Home = () => {
     const navigate = useNavigate();
 
     const handleOpenMap = () => {
-        navigate('/map'); 
+        navigate('/stressmap/map'); 
     };
 
     return (

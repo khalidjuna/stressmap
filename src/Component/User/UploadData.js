@@ -50,12 +50,12 @@ const UploadData = () => {
       startUpload();
       setSubmitted(true); 
     } else {
-      navigate('/map');
+      navigate('/stressmap/map');
     }
   };
 
   const handleHistoryClick = () => {
-    navigate('/history');
+    navigate('/stressmap/history');
   };
   
   const styles = {
