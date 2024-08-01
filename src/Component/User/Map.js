@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import 'ol/ol.css';
 import { Map, View } from 'ol';
-import { fromLonLat, toLonLat } from 'ol/proj'; 
-import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
+import { fromLonLat, toLonLat } from 'ol/proj';
+import { Tile as TileLayer, Heatmap as HeatmapLayer, Vector as VectorLayer } from 'ol/layer';
 import { OSM, Vector as VectorSource } from 'ol/source';
 import { Pointer, Draw } from 'ol/interaction';
-import Polygon from 'ol/geom/Polygon'; 
+import { Feature } from 'ol';
+import Point from 'ol/geom/Point';
+import Polygon from 'ol/geom/Polygon';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Navbar from './Navbar';
-import DownloadPopup from './Download'; 
+import DownloadPopup from './Download';
+import Watermark from './Watermark';
 
 const Map3DComponent = () => {
   const mapRef = useRef(null);
@@ -17,10 +20,28 @@ const Map3DComponent = () => {
   const drawInteractionRef = useRef(null);
   const selectInteractionRef = useRef(null);
   const [selectedArea, setSelectedArea] = useState(null);
-  const [showDownloadPopup, setShowDownloadPopup] = useState(false); 
+  const [showDownloadPopup, setShowDownloadPopup] = useState(false);
 
   useEffect(() => {
     const vectorSource = new VectorSource();
+
+    // Sample data points for the heatmap
+    const dataPoints = [
+      [110.426208, -7.614529],
+      [110.428208, -7.615529],
+      [110.429208, -7.616529],
+      // Add more data points as needed
+    ];
+
+    // Convert data points to features
+    const features = dataPoints.map(point => {
+      const feature = new Feature({
+        geometry: new Point(fromLonLat(point))
+      });
+      return feature;
+    });
+
+    vectorSource.addFeatures(features);
 
     const map = new Map({
       target: 'map',
@@ -28,6 +49,11 @@ const Map3DComponent = () => {
       layers: [
         new TileLayer({
           source: new OSM(),
+        }),
+        new HeatmapLayer({
+          source: vectorSource,
+          blur: 15,
+          radius: 8,
         }),
         new VectorLayer({
           source: vectorSource,
@@ -47,6 +73,7 @@ const Map3DComponent = () => {
     map.addInteraction(pointer);
 
     mapRef.current = map;
+    mapRef.current.vectorSource = vectorSource;
 
     return () => {
       map.dispose();
@@ -96,7 +123,7 @@ const Map3DComponent = () => {
       selectInteractionRef.current = null;
     }
     if (!drawInteractionRef.current) {
-      const vectorSource = mapRef.current.getLayers().getArray()[1].getSource();
+      const vectorSource = mapRef.current.vectorSource;
       const geometryFunction = (coordinates, geometry) => {
         if (!geometry) {
           geometry = new Polygon([]);
@@ -122,7 +149,7 @@ const Map3DComponent = () => {
 
       drawInteractionRef.current.on('drawend', (event) => {
         const coordinates = event.feature.getGeometry().getCoordinates()[0];
-        setSelectedArea(coordinates); 
+        setSelectedArea(coordinates);
         setShowDownloadPopup(true);
       });
 
@@ -138,10 +165,16 @@ const Map3DComponent = () => {
     console.log('Download selected area:', selectedArea);
   };
 
+  const handleClearSelection = () => {
+    mapRef.current.vectorSource.clear();
+    setSelectedArea(null);
+  };
+
   return (
     <div>
       <Navbar />
       <div id="map" className="map-container"></div>
+      <Watermark />
       <div ref={coordinatesRef} className="coordinates"></div>
       <div className="controls">
         <div className="mode-controls">
@@ -160,12 +193,17 @@ const Map3DComponent = () => {
             <i className="bi bi-dash"></i>
           </button>
         </div>
+        <div className="selection-controls">
+          <button className="btn btn-light" onClick={handleClearSelection} style={{ color: '#dc3545' }}>
+            <i className="bi bi-trash"></i>
+          </button>
+        </div>
       </div>
       {showDownloadPopup && (
         <DownloadPopup
           onClose={handleCloseDownloadPopup}
-          selectedArea={selectedArea} 
-          onDownload={handleDownload} 
+          selectedArea={selectedArea}
+          onDownload={handleDownload}
         />
       )}
       <style>
@@ -200,6 +238,11 @@ const Map3DComponent = () => {
             margin-bottom: 3px;
           }
           .mode-controls {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3px;
+          }
+          .selection-controls {
             display: flex;
             flex-direction: column;
           }

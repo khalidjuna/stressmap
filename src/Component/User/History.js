@@ -37,7 +37,7 @@ const History = () => {
       alignItems: 'center', 
     },
     searchContainer: {
-      position: 'relative', // Menjadikan posisi turunan yang bersandar pada posisi induk
+      position: 'relative', 
       padding: '20px',
       display: 'flex',
       justifyContent: 'flex-end', 

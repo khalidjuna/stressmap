@@ -26,10 +26,10 @@ const Login = ({ setUserRole }) => {
         // Example:
         if (email === 'admin@example.com' && password === 'admin') {
             setUserRole('admin');
-            navigate("/stressmap/adminmap");
+            navigate('/stressmap/adminmap');
         } else {
             setUserRole('user');
-            navigate("/stressmap/map");
+            navigate('/stressmap/map');
         }
         setIsLoggedIn(true);
     };
@@ -79,7 +79,7 @@ const Login = ({ setUserRole }) => {
                 )}
                 <div className="submit-container">
                     <button type="submit" className="btn btn-primary submit">Login</button>
-                    <Link to="/sign-up" className="btn btn-secondary submit gray">Sign Up</Link>
+                    <Link to="/stressmap/sign-up" className="btn btn-secondary submit gray">Sign Up</Link>
                 </div>
             </form>
             <style>

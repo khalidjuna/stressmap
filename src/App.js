@@ -29,8 +29,8 @@ function App() {
   };
 
   return (
-    // <Router basename="/stressmap">
-      <Router>
+    //<Router basename="/stressmap">
+    <Router>
       <div className="App" id="root">
         {userRole === 'admin' && <AdminNavbar />}
         <div className="content">

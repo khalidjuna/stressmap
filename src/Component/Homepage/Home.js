@@ -13,11 +13,11 @@ const Home = () => {
     };
 
     return (
-        <main style={{ fontFamily: 'Playfair Display", serif' }}>
+        <main style={{ fontFamily: 'Poppins, sans-serif' }}>
             <style>
                 {`
                 .hero {
-                    background-image: url('background.jpg'); 
+                    background: linear-gradient(to bottom, #86A9DD, #0A2650);
                     background-size: cover;
                     background-position: center;
                     color: white;
@@ -50,7 +50,7 @@ const Home = () => {
                     font-size: 1rem;
                     margin-top: 2rem; 
                     text-align: left; 
-                    font-family: "Playfair Display", serif;
+                    font-family: "Poppins", sans-serif;
                     font-weight: 400;
                     font-style: normal;
                     color: "#949494";
@@ -60,23 +60,23 @@ const Home = () => {
                 .hero .open-map {
                     margin: 1rem 0;
                     padding: 0.75rem 1.5rem;
-                    background-color: #fcbf49;
+                    background-color: #547AB2;
                     border: none;
                     border-radius: 25px;
                     cursor: pointer;
                     font-size: 1rem;
-                    color: black;
+                    color: #FFFFFF; 
                     transition: background-color 0.3s;
                     float: left; 
                     margin-top: -1rem;
-                    box-shadow: 0 0 10px rgba(252, 191, 73, 0.5);
-                    font-family: "Playfair Display", serif;
+                    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+                    font-family: "Poppins", serif;
                     font-weight: 700;
                 }
 
                 .open-map:hover {
-                    background-color: #e8a937;
-                    box-shadow: 0 0 20px rgba(252, 191, 73, 1);
+                    background-color: #547AB2;
+                    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
                 }
 
                 section {
@@ -92,31 +92,31 @@ const Home = () => {
 
                 section.about h2 {
                     color: #603809; 
-                    font-family: "Playfair Display", serif;
+                    font-family: "Poppins", sans-serif;
                     font-weight: 700;
                 }
 
                 section.why-java h2 {
                     color: #603809; 
-                    font-family: "Playfair Display", serif;
+                    font-family: "Poppins", sans-serif;
                     font-weight: 700;
                 }
 
                 section.collaboration h2 {
                     color: #603809; 
-                    font-family: "Playfair Display", serif;
+                    font-family: "Poppins", sans-serif;
                     font-weight: 700;
                 }
 
                 section.team h2 {
                     color: #fff; 
-                    font-family: "Playfair Display", serif;
+                    font-family: "Poppins", sans-serif;
                     font-weight: 700;
                 }
 
                 section.contact h2 {
                     color: #603809; 
-                    font-family: "Playfair Display", serif;
+                    font-family: "Poppins", sans-serif;
                     font-weight: 700;
                 }
                 
@@ -211,7 +211,7 @@ const Home = () => {
             </section>
             <section id="why-java" className="why-java" style={{ paddingTop: '100px' }}>
                 <img
-                    src="/style2.png"
+                    src="style2.png"
                     alt="Decorative Left"
                     className="decorative-image-left"
                 />
@@ -228,38 +228,46 @@ const Home = () => {
                     <img src="UI.png" alt="UI Logo" />
                 </div>
                 <img
-                    src="/style.png"
+                    src="style.png"
                     alt="Decorative Right"
                     className="decorative-image-right"
                 />
             </section>
 
             <section id="team" className="team" style={{ paddingTop: '100px' }}>
-            <div className="team-content">
-                <h2 style={{ textAlign: 'left', marginLeft: '0' }}>Our Team</h2>
-                <p style={{ textAlign: 'left', marginLeft: '0', color: '#fff' }}>We are a dedicated group of experts aiming to make significant contributions in geophysical sciences in Indonesia. Our research aims to provide valuable insights and foster further research and development in this field.</p>
+            <div className="team-content" style={{ marginTop: '-20px' }}>
+                <h2 style={{ marginBottom: '0.5rem' }}>Our Team</h2>
+                <p style={{ color: '#fff' }}>We are a dedicated group of experts aiming to make significant contributions in geophysical sciences in Indonesia. Our research aims to provide valuable insights and foster further research and development in this field.</p>
             </div>
-                <img src="team-photo.jpg" alt="Our Team" className="team-image"/>
             </section>
-            <section id="contact" className="contact" style={{paddingTop: '100px', display: 'flex', flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <div style={{ textAlign: 'left', flex: '1', padding: '1rem', paddingLeft: '3rem' }}>
-                    <h2>Contact Us</h2>
-                    <p style={{ fontFamily: "Playfair Display, serif", fontWeight: '400', fontSize: '1rem' }}>Jl. Teknik Kimia, Keputih, Kec. Sukolilo, Surabaya, Jawa Timur 60111</p>
-                    <p style={{ fontFamily: "Playfair Display, serif", fontWeight: '400', fontSize: '1rem' }}>+1 202-918-2132</p>
-                    <p style={{ fontFamily: "Playfair Display, serif", fontWeight: '400', fontSize: '1rem' }}>its.ac.id</p>
-                    <p style={{ fontFamily: "Playfair Display, serif", fontWeight: '400', fontSize: '1rem' }}><a href="http://its.ac.id">its.ac.id</a></p>
-                </div>
-                    <div style={{ textAlign: 'left', flex: '1', padding: '1rem' }}>
-                        <p style={{ fontFamily: "Comic Neue, cursive", fontWeight: '700', fontSize: '2rem' }}>Stress Map</p>
-                        <p style={{ fontFamily: "Playfair Display, serif", fontWeight: '400', fontSize: '1rem' }}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <div>
-                        <a href="https://www.facebook.com" style={{ marginRight: '10px', color: 'black' }}><i className="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com" style={{ marginRight: '10px', color: 'black' }}><i className="bi bi-instagram"></i></a>
-                        <a href="https://www.youtube.com" style={{ marginRight: '10px', color: 'black' }}><i className="bi bi-youtube"></i></a>
-                        <a href="https://twitter.com" style={{ marginRight: '10px', color: 'black' }}><i className="bi bi-twitter"></i></a>
-                    </div>
-                </div>
-            </section>
+            <section id="contact" className="contact" style={{ paddingTop: '100px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginLeft: "100px" }}>
+            <div style={{ textAlign: 'left', flex: '1', padding: '1rem' }}>
+                <h3 style={{ color: '#000000' }}>Address</h3>
+                <p style={{ fontFamily: "Poppins, serif", fontWeight: '400', fontSize: '1rem' }}>
+                    Departemen Teknik Geofisika; Fakultas Teknik Sipil, Perencanaan, dan Kebumian<br />
+                    Teknologi Sepuluh Nopember Sukolilo,<br />
+                    Surabaya, Jawa Timur 60117
+                </p>
+            </div>
+            <div style={{ textAlign: 'left', flex: '1', padding: '1rem', paddingLeft: '3rem', marginLeft: "300px" }}>
+                <h3>Phone</h3>
+                    <p style={{ fontFamily: "Poppins, serif", fontWeight: '400', fontSize: '1rem' }}>(031) 5953476</p>
+                <h3>Email</h3>
+                    <p style={{ fontFamily: "Poppins, serif", fontWeight: '400', fontSize: '1rem', textAlign: 'left' }}><a href="mailto:tgeofisika@its.ac.id ">tgeofisika@its.ac.id</a></p>
+                <h3>Visit Us</h3>
+                    <p style={{ fontFamily: "Poppins, serif", fontWeight: '400', fontSize: '1rem', textAlign: 'left' }}>
+                    <a href="https://www.instagram.com/teknik_geofisika_its/" style={{ marginRight: '10px', color: 'black' }}>
+                <i className="bi bi-instagram"></i> Instagram
+                </a><br />
+                    <a href="https://www.facebook.com/TeknikGeofisikaITS" style={{ marginRight: '10px', color: 'black', textAlign: 'left' }}>
+                <i className="bi bi-facebook"></i> Facebook
+                </a><br />
+                    <a href="https://www.youtube.com/channel/UC78HW-Wv_VUnVM6x1lhHw6Q" style={{ marginRight: '10px', color: 'black', textAlign: 'left'}}>
+                <i className="bi bi-youtube"></i> YouTube
+                </a>
+                </p>
+            </div>
+        </section>
             <Footer />
         </main>
     );

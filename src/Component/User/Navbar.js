@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav style={styles.navbar}>
       <div style={styles.logo}>
-        <img style={styles.logoImage} src="/logo.png" alt="Logo" />
+        <img style={styles.logoImage} src="logo.png" alt="Logo" />
       </div>
       <h1 style={styles.stressMap}>Stress Map</h1>
       <ul style={styles.navLinks}>
@@ -67,7 +67,7 @@ const styles = {
     backgroundColor: "#fff",
     padding: "20px",
     color: "#333",
-    fontFamily: "Playfair Display, serif",
+    fontFamily: "Poppins, serif",
     fontSize: "700",
     position: "fixed",
     top: "0",
@@ -87,8 +87,8 @@ const styles = {
   stressMap: {
     margin: "5px 0 20px 55px",
     fontSize: "18px",
-    fontFamily: "Comic Neue, cursive",
-    fontWeight: "700",
+    fontFamily: "Poppins, serif",
+    fontWeight: "400",
     cursor: "pointer",
   },
   navLinks: {

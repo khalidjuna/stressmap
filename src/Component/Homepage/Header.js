@@ -21,10 +21,10 @@ const headerStyles = {
     },
     title: {
         fontSize: '1.5rem',
-        fontWeight: 'bold 700',
+        fontWeight: 'bold',
         color: 'black',
-        fontFamily: "Comic Neue, cursive",
-        // fontWeight: '700',
+        fontFamily: "Poppins, serif",
+        fontWeight: '400',
     },
     nav: {
         listStyle: 'none',
@@ -34,18 +34,18 @@ const headerStyles = {
     navItem: {
         color: 'black',
         textDecoration: 'none',
-        fontFamily: "Playfair Display, serif",
+        fontFamily: "Poppins, serif",
         fontWeight: '500',
         marginLeft: '2rem'
     },
     button: {
         padding: '0.5rem 1rem',
-        backgroundColor: '#fcbf49',
+        backgroundColor: '#2161BD',
         border: 'none',
         borderRadius: '5px',
         cursor: 'pointer',
         fontSize: '1rem',
-        color: 'black',
+        color: 'white',
         transition: 'background-color 0.3s',
     },
 };

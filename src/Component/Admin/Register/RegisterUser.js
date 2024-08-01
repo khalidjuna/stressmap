@@ -128,7 +128,7 @@ const RegisterUser = () => {
                 </div>
                 {isRegistered && (
                     <div className="success-message">
-                        Registration successful! You can now <Link to="/login">Login</Link>.
+                        Registration successful! You can now <Link to="/stressmap/login">Login</Link>.
                     </div>
                 )}
             </form>
